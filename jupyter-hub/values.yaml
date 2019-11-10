@@ -1,0 +1,13 @@
+singleuser:
+  image:
+    name: jupyter/scipy-notebook
+    tag: a95cb64dfe10
+
+  storage:
+    type: none
+  lifecycleHooks:
+    postStart:
+      exec:
+        command: ["/usr/bin/git", "clone", "https://github.com/CNA-Tech/Apps-on-PKS.git", "data-analysis"]
+proxy:
+  secretToken: "--put-your-randome-hex-value-here--"
